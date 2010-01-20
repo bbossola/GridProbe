@@ -1,9 +1,0 @@
-package com.gridprobe.grid;
-
-import com.gridprobe.grid.serialization.Binaryzable;
-
-public interface Message extends Binaryzable{
-
-	public abstract Credentials credentials()
-	;
-}
