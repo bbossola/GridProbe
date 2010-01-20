@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/landscape/!svn/ver/67/trunk/net-grid/src/main/java/com/gridprobe/grid/core
+END
+CoreTransport.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/CoreTransport.java
+END
+CoreAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/CoreAction.java
+END
+CoreCredentials.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/CoreCredentials.java
+END
+AgentRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/AgentRegistry.java
+END
+CoreAgent.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/landscape/!svn/ver/69/trunk/net-grid/src/main/java/com/gridprobe/grid/core/CoreAgent.java
+END
+CoreProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/landscape/!svn/ver/66/trunk/net-grid/src/main/java/com/gridprobe/grid/core/CoreProtocol.java
+END
+MessageDispatcher.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/MessageDispatcher.java
+END
+CoreGrid.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/CoreGrid.java
+END

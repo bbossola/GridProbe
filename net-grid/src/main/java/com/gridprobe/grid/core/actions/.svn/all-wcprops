@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/landscape/!svn/ver/58/trunk/net-grid/src/main/java/com/gridprobe/grid/core/actions
+END
+AbstractAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/actions/AbstractAction.java
+END
+PresenceAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/actions/PresenceAction.java
+END
+LeavingAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/actions/LeavingAction.java
+END
+DiscoveryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/actions/DiscoveryAction.java
+END
+JoiningAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/actions/JoiningAction.java
+END

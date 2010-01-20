@@ -1,0 +1,15 @@
+package com.gridprobe.grid.serialization;
+
+import java.nio.ByteBuffer;
+
+public class NullObject implements Binaryzable {
+
+	@Override
+	public void fromBytes(ByteBuffer buffer) throws BinaryzationException {
+	}
+
+	@Override
+	public void toBytes(ByteBuffer buffer) throws BinaryzationException {
+	}
+
+}

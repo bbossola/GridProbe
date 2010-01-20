@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/landscape/!svn/ver/58/trunk/net-grid/src/main/java/com/gridprobe/grid/serialization
+END
+ObjectSerializer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/serialization/ObjectSerializer.java
+END
+NullObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/serialization/NullObject.java
+END
+Binaryzable.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/serialization/Binaryzable.java
+END
+BinaryzationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/serialization/BinaryzationException.java
+END

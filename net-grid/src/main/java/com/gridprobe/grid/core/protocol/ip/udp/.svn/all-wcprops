@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/landscape/!svn/ver/66/trunk/net-grid/src/main/java/com/gridprobe/grid/core/protocol/ip/udp
+END
+UDPServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/landscape/!svn/ver/46/trunk/net-grid/src/main/java/com/gridprobe/grid/core/protocol/ip/udp/UDPServer.java
+END
+UDPProtocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/landscape/!svn/ver/66/trunk/net-grid/src/main/java/com/gridprobe/grid/core/protocol/ip/udp/UDPProtocol.java
+END
