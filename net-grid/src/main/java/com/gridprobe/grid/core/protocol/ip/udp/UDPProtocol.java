@@ -47,8 +47,8 @@ public class UDPProtocol implements CoreProtocol {
 			loadParams();
 			loadPorts();
 			openMulticastSocket();
-			startReceiver();
 			loadEndpoints();
+            startReceiver();
 		} catch (Exception e) {
 			throw new GridException(Failure.NET_ERROR, e, "Error creating socket: "+e.getMessage());
 		}

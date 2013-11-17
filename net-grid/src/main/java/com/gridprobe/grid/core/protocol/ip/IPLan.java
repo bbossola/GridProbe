@@ -115,7 +115,7 @@ public class IPLan implements Lan, Binaryzable {
 	public static IPLan createFrom(InterfaceAddress inetAddress) throws GridException {
 		byte[] address = inetAddress.getAddress().getAddress();
 		final int len = address.length;
-		if (len != 4 && len != 6)
+		if (len != 4 && len != 16)
 			throw new GridException(Failure.NET_ERROR, "Only IPV4/IPV6 are supported - received address: "
 					+ toString(address));
 

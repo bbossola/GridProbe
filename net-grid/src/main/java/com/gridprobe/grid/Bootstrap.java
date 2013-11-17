@@ -11,8 +11,9 @@ public class Bootstrap {
 	public static Grid grid() throws GridException {
 		synchronized(Bootstrap.class) {
 			if (grid == null) {
-				grid = CoreGrid.instance();
-				grid.install(new UDPProtocol());
+			    Grid g = CoreGrid.instance();
+				g.install(new UDPProtocol());
+				grid = g;
 			}
 			
 			return grid;

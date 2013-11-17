@@ -3,6 +3,7 @@ package com.gridprobe.grid.core;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.gridprobe.grid.Agent;
@@ -25,13 +26,13 @@ public class AgentRegistry {
 
 	public void register(Agent source) {
 		CoreAgent agent = toCore(source);
-		logger.finest("Agent register request received - agent: "+agent);
+		if (logger.isLoggable(Level.FINEST)) logger.finest("Agent register request received - agent: "+agent+ "(hashcode: "+agent.hashCode()+")");
 		agents.add(agent);
 	}
 
 	public void unregister(Agent source) {
 		CoreAgent agent = toCore(source);
-		logger.finest("Agent unregister request received - agent: "+agent);
+        if (logger.isLoggable(Level.FINEST)) logger.finest("Agent unregister request received - agent: "+agent+ "(hashcode: "+agent.hashCode()+")");
 		agents.remove(agent);
 	}
 

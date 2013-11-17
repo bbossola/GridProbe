@@ -2,17 +2,17 @@ package com.gridprobe.grid.core;
 
 import java.nio.ByteBuffer;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import com.gridprobe.grid.Agent;
 import com.gridprobe.grid.Endpoint;
 import com.gridprobe.grid.GridException;
+import com.gridprobe.grid.GridException.Failure;
 import com.gridprobe.grid.Lan;
 import com.gridprobe.grid.Message;
 import com.gridprobe.grid.Protocol;
 import com.gridprobe.grid.Report;
-import com.gridprobe.grid.GridException.Failure;
 import com.gridprobe.grid.serialization.Binaryzable;
 import com.gridprobe.grid.serialization.BinaryzationException;
 import com.gridprobe.grid.serialization.ObjectSerializer;
@@ -25,21 +25,21 @@ public class CoreAgent implements Agent, Binaryzable {
 	private String nickname;
 	
 	public CoreAgent () {
-		this(null, null);
+		this(null, Collections.<Endpoint>emptySet());
 	}
 
 	public CoreAgent (String nickname, Set<Endpoint> endpoints) {
-		this.id=new Id(UUID.generateLong());
-		this.nickname=(nickname == null ? "" : nickname);
-		this.endpoints = endpoints;
+		this(new Id(UUID.generateLong()), nickname, endpoints);
 	}
+
+    CoreAgent (Id id, String nickname, Set<Endpoint> endpoints) {
+        this.id=id;
+        this.nickname=(nickname == null ? "" : nickname);
+        this.endpoints = new TreeSet<Endpoint>(endpoints);
+    }
 
 	public Id id() {
 		return id;
-	}
-
-	public int hashCode() {
-		return id.hashCode();
 	}
 
 	public Endpoint getEndpointFor(Protocol protocol) {
@@ -51,6 +51,12 @@ public class CoreAgent implements Agent, Binaryzable {
 		return null;
 	}
 
+    @Override
+	public int hashCode() {
+        return id.hashCode();
+	}
+	
+    @Override
 	public boolean equals(Object o) {
 		try {
 			return this.id.equals(((CoreAgent)o).id);
@@ -98,7 +104,7 @@ public class CoreAgent implements Agent, Binaryzable {
 			nickname = (String) ObjectSerializer.fromBytes(buffer);
 			
 			int num = buffer.getShort();
-			endpoints = new HashSet<Endpoint>();
+			endpoints = new TreeSet<Endpoint>();
 			for (int i = 0; i < num; i++) {
 				endpoints.add((Endpoint)ObjectSerializer.fromBytes(buffer));
 			}
@@ -155,7 +161,8 @@ public class CoreAgent implements Agent, Binaryzable {
 		@Override
 		public boolean equals(Object obj) {
 			try {
-				return ((Id)obj).value == this.value;
+				final Long other = ((Id)obj).value;
+                return this.value.equals(other);
 			}
 			catch (Exception ex) {
 				return false;

@@ -48,7 +48,7 @@ public class IPEndpoint implements Endpoint {
 //	}
 
 	public String toString() {
-		return "IP"+host+":"+port+lan;
+		return host+":"+port+"@"+lan;
 	}
 	
 	@Override
@@ -78,5 +78,20 @@ public class IPEndpoint implements Endpoint {
 			throw BinaryzationException.create(e);
 		}
 	}
+
+	@Override
+	public boolean equals (Object other) {
+	    try {
+	        return this.compareTo((IPEndpoint)other) == 0;
+	    }
+	    catch (Exception any) {
+	        return false;
+	    }
+	}
+
+	@Override
+    public int compareTo(Endpoint ep) {
+        return (ep == null ? 1 : toString().compareTo(ep.toString()));
+    }
 
 }
