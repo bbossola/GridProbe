@@ -8,11 +8,12 @@ import java.nio.ByteBuffer;
 import com.gridprobe.grid.serialization.Binaryzable;
 import com.gridprobe.grid.serialization.BinaryzationException;
 import com.gridprobe.grid.serialization.ObjectSerializer;
+import com.gridprobe.grid.serialization.Serializer;
 
 public class Sample implements Binaryzable {
 
 	private String txt;
-	private Long lval;
+	private Long lval = 0L;
 	
 	public Sample(){
 	}
@@ -43,13 +44,15 @@ public class Sample implements Binaryzable {
 	
 	@Override
 	public void fromBytes(ByteBuffer buffer) throws BinaryzationException {
-		txt = ObjectSerializer.stringFromBytes(buffer);
+        Serializer<String> serializer = ObjectSerializer.forClass(String.class);
+		txt =  serializer.fromBytes(buffer);
 		lval = buffer.getLong();
 	}
-
+ 
 	@Override
 	public void toBytes(ByteBuffer buffer) throws BinaryzationException {
-		ObjectSerializer.forClass(String.class).toBytes(buffer, txt);
+        Serializer<String> serializer = ObjectSerializer.forClass(String.class);
+        serializer.toBytes(buffer, txt);
 		buffer.putLong(lval);
 	}
 }

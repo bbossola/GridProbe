@@ -19,7 +19,7 @@ public class ObjectSerializer {
 	private static SerializableSerializer serializables = new SerializableSerializer();
 	private static BinaryzableSerializer binaryzables = new BinaryzableSerializer();
 
-	private static Map<Class<?>, Serializer> serializers = new HashMap<Class<?>, Serializer>();
+	private static Map<Class<?>, Serializer<?>> serializers = new HashMap<Class<?>, Serializer<?>>();
 	static {
 		serializers.put(Serializable.class, serializables);
 		serializers.put(Binaryzable.class, binaryzables);
@@ -27,12 +27,12 @@ public class ObjectSerializer {
 		serializers.put(Long.class, new LongSerializer());
 		// FIXME: add more custom serializers please!!!
 	}
-
+ 
 	private ObjectSerializer() {
 	}
 
-	public static Serializer<S extends Class> forClass(S c) {
-		Serializer serializer = serializers.get(c);
+    public static <T> Serializer<T> forClass(Class<T> c) {
+		Serializer<?> serializer = serializers.get(c);
 		if (serializer == null) {
 			if (c.isAssignableFrom(Serializable.class))
 				serializer = serializables;
@@ -43,7 +43,7 @@ public class ObjectSerializer {
 		if (serializer == null)
 			throw BinaryzationException.create("Unable to find a suitable serializer for class "+c+" - at least please implement java.io.Serializable!");
 
-		return serializer;
+		return (Serializer<T>)serializer;
 	}
 	
 	

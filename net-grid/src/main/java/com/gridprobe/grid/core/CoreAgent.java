@@ -79,7 +79,7 @@ public class CoreAgent implements Agent, Binaryzable {
 	public void toBytes(ByteBuffer buffer) {
 		try {
 			buffer.putLong(id.value());
-			ObjectSerializer.stringToBytes(buffer, nickname);
+			ObjectSerializer.toBytes(buffer, nickname);
 			
 			buffer.putShort((short)endpoints.size());
 			for (Endpoint ep : endpoints) {
@@ -95,7 +95,7 @@ public class CoreAgent implements Agent, Binaryzable {
 	public void fromBytes(ByteBuffer buffer) {
 		try {
 			id = new Id(buffer.getLong());
-			nickname = ObjectSerializer.stringFromBytes(buffer);
+			nickname = (String) ObjectSerializer.fromBytes(buffer);
 			
 			int num = buffer.getShort();
 			endpoints = new HashSet<Endpoint>();

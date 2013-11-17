@@ -10,32 +10,32 @@ import com.gridprobe.grid.serialization.ObjectSerializer;
 
 public abstract class AbstractMessage implements Message {
 
-	protected CoreCredentials from;
-	
-	public AbstractMessage() {
-	}
+    protected CoreCredentials from;
 
-	public AbstractMessage(CoreCredentials from) {
-		this.from = from;
-	}
+    public AbstractMessage() {
+    }
 
-	@Override
-	public Credentials credentials() {
-		return from;
-	}
+    public AbstractMessage(CoreCredentials from) {
+        this.from = from;
+    }
 
-	@Override
-	public void fromBytes(ByteBuffer buffer) throws BinaryzationException {
-		from = (CoreCredentials) ObjectSerializer.fromBytes(buffer);
-	}
+    @Override
+    public Credentials credentials() {
+        return from;
+    }
 
-	@Override
-	public void toBytes(ByteBuffer buffer) throws BinaryzationException {
-		ObjectSerializer.toBytes(buffer, from);
-	}
-	
-	@Override
-	public String toString() {
-		return "Message "+getClass().getSimpleName()+" from "+credentials().source();
-	}
+    @Override
+    public void fromBytes(ByteBuffer buffer) throws BinaryzationException {
+        from = (CoreCredentials) ObjectSerializer.fromBytes(buffer);
+    }
+
+    @Override
+    public void toBytes(ByteBuffer buffer) throws BinaryzationException {
+        ObjectSerializer.toBytes(buffer, from);
+    }
+
+    @Override
+    public String toString() {
+        return "Message " + getClass().getSimpleName() + " from " + credentials().source();
+    }
 }
