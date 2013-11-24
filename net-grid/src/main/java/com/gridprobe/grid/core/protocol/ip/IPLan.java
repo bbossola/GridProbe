@@ -52,7 +52,7 @@ public class IPLan implements Lan, Binaryzable {
 	public int hashCode() {
 		int tot = cidr;
 		for (byte b : address) {
-			int i = (int) b;
+			int i = (b == 0) ? 1 : (int)b;
 			tot *= i;
 		}
 

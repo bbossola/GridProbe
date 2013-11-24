@@ -88,7 +88,7 @@ public class IPEndpoints  {
 			System.out.println("Addresses:   "+nic.getInetAddresses());
 			System.out.println("DisplayName: "+nic.getDisplayName());
 			System.out.flush();
-			System.out.println("HW addr:     "+nic.getHardwareAddress());
+//			System.out.println("HW addr:     "+nic.getHardwareAddress());
 			
 			Set<IPEndpoint> endpoints = onSocket(socket);
 			for (IPEndpoint endpoint : endpoints) {
